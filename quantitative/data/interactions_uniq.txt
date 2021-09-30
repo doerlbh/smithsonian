@@ -1,0 +1,153 @@
+
+	journal = {Oikos}
+
+ 1 Female
+ 1 Female"
+ 1 female
+ 1 female from the same collection ret"
+ 1 female"
+ 1 immature"
+ 1 junvenile"
+ 1 juvenile & 7 males"
+ 1 juvenile"
+ 1 male"
+ 1 specimen"
+ 10 specimens"
+ 11 females"
+ 14 specimens"
+ 15 females"
+ 17 immatures"
+ 1F"
+ 2 Females"
+ 2 Immatures"
+ 2 female"
+ 2 females
+ 2 females"
+ 2 immatures"
+ 2 juveniles"
+ 2 males"
+ 2 specimens"
+ 20 female"
+ 21 specimens"
+ 25 specimens"
+ 2F"
+ 3 Females"
+ 3 females
+ 3 females"
+ 3 juveniles"
+ 3 males"
+ 3 specimens"
+ 32 juveniles"
+ 38 juvenile"
+ 4 Females"
+ 4 female"
+ 4 females
+ 4 females"
+ 4 juveniles"
+ 4 specimens"
+ 4F"
+ 5 females
+ 5 females"
+ 5 juveniles"
+ 5 specimens"
+ 6 Females"
+ 6 females"
+ 6 juveniles"
+ 6 specimens"
+ 7 juveniles"
+ 7 specimens"
+ 8 females
+ 8 females & 7 immatures"
+ 8 females"
+ 8 males"
+ 9 females"
+ 98: 1476-1476. doi:10.1002/ecy.1799"
+ F"
+ female
+ female"
+ females"
+ male
+ male"
+"1 female
+"1 male
+"12 females
+"2 female
+"2 male
+"3 nymph
+(Eulemur flavifrons) in differently degraded forest fragments.
+1 female
+1 male
+1F"
+2 females
+2F"
+3 females
+3F"
+3M"
+4F"
+9F"
+F
+FB_COUNTRY:044|
+FB_COUNTRY:170|
+FB_COUNTRY:300|
+FB_COUNTRY:356|
+FB_COUNTRY:392B|
+FB_COUNTRY:392|
+FB_COUNTRY:404|
+FB_COUNTRY:643|
+FB_COUNTRY:752|
+FB_COUNTRY:792|
+Female
+Gastrointestinal parasites of small mammals in the littoral forest
+M
+Male
+Processa sp.
+SLB_COUNTRY:076|
+SLB_COUNTRY:124|
+SLB_COUNTRY:260K|
+SLB_COUNTRY:484|
+SLB_COUNTRY:840|
+South-eastern Black
+USDA-ARS
+adjacentTo
+avium subspecies hominissuis' infection in a domestic
+coOccursWith
+commensalistOf
+createsHabitatFor
+eats
+ecologicallyRelatedTo
+ectoParasitoid
+ectoparasiteOf
+endoparasiteOf
+endoparasitoidOf
+farms
+female
+female"
+female;male
+globalbioticinteractions/global-primate-parasite-database
+guestOf
+hasDispersalVector
+hasHost
+hasVector
+https://github.com/globalbioticinteractions/global-primate-parasite-database/archive/8837950cc35217c48eb7ecd6de7e70df0ea8a15b.zip
+imm
+inhabits
+interactionTypeName
+interactsWith
+kills
+kleptoparasiteOf
+laysEggsOn
+livesInsideOf
+livesNear
+livesOn
+livesUnder
+male
+male"
+mutualistOf
+parasiteOf
+parasitoidOf
+pathogenOf
+pollinates
+preysOn
+symbiontOf
+visits
+visitsFlowersOf
