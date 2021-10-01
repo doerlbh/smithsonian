@@ -100,7 +100,8 @@ Female
 Gastrointestinal parasites of small mammals in the littoral forest
 M
 Male
-Processa sp.
+Processa sp.
+
 SLB_COUNTRY:076|
 SLB_COUNTRY:124|
 SLB_COUNTRY:260K|
@@ -128,7 +129,6 @@ guestOf
 hasDispersalVector
 hasHost
 hasVector
-https://github.com/globalbioticinteractions/global-primate-parasite-database/archive/8837950cc35217c48eb7ecd6de7e70df0ea8a15b.zip
 imm
 inhabits
 interactionTypeName
