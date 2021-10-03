@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+
+
+<head>
+    <style> body { margin: 0; } </style>
+  
+    <script src="//unpkg.com/3d-force-graph"></script>
+    <!--<script src="../../dist/3d-force-graph.js"></script>-->
+  </head>
+  
+  <style>
+   .inGreen { color: green; }
+   p, h1, h2, h3 {
+   text-align:center; 
+   }
+   /* svg {
+   display: block;
+   margin: auto;
+   } */
+   svg circle.node {
+   fill: #3b5998;
+   stroke: #1b3978;
+   stroke-width: 1.5px;
+   }
+   svg line.link {
+   stroke: #222;
+   stroke-opacity: .6;
+   stroke-width: 2px;
+   }
+   div.tooltip {   
+   position: absolute;           
+   text-align: center;
+   opacity: 0;
+   visibility: hidden;
+   width: 80px;                  
+   height: 40px;                 
+   padding: 2px;             
+   font: 12px sans-serif;        
+   background: #8fb3de;   
+   border: 0px;      
+   border-radius: 8px;           
+   pointer-events: none;         
+   }
+</style>
+
+
+<h1 class="inGreen">You are what you eat: A journey through the Food Web</h1>
+<p>This visualization investigates the top predators and preys in the food web. The dataset comes from the National Museum of Natural History.</p>
+
+<script src="https://d3js.org/d3.v3.js"></script>
+
+    <div id="3d-graph"></div>
+  
+    <script>
+      const Graph = ForceGraph3D()
+        (document.getElementById('3d-graph'))
+          .jsonUrl('../data/top_species_data.json')
+          .nodeLabel('id')
+          .nodeAutoColorBy('group')
+          .nodeVal('predators')
+    </script>
+  </body>
