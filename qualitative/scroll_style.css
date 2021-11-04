@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Merienda One';
+  min-height: 1280px;
+  color: #3b3b3b;
+  font-size: 16px;
+  background: #e68fac;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+a {
+  margin: 0;
+  font-weight: 400;
+}
+
+a,
+a:visited,
+a:hover {
+  color: teal;
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: #f3f3f3;
+  padding: 1rem;
+  padding-right: 5rem;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.nav__examples {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.nav__examples > * {
+  margin-right: 0.5rem;
+}
+
+.first {
+  background: url(./data/sketch/0.png);
+  background-size: cover;
+}
+
+#intro {
+  max-width: 40rem;
+  margin: 1rem auto;
+  text-align: center;
+
+}
+
+.intro__hed {
+  font-size: 2em;
+  margin: 2rem auto 0.5rem auto;
+}
+
+.intro__dek {
+  color: #ffffff;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+#intro {
+  margin-bottom: 0px;
+}
+
+/* #outro {
+  height: 640px;
+} */
+
+@media (min-width: 840px) {
+  .nav__examples {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+}
+
+#scrolly {
+  position: relative;
+  background-color: #f3f3f3;
+  padding: 1rem;
+}
+
+article {
+  position: relative;
+  padding: 0;
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+figure {
+  left: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  margin: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  background: #807171;
+  background-image: url(./data/sketch/1.png);
+  background-repeat: no-repeat;
+  background-position: 75% 20%;
+  background-size: 40% 100% ;
+  z-index: 0;
+  border-radius: 20px;
+  padding-top:3px;
+  padding-bottom:3px;
+  padding-left:3px;
+  padding-right:18px;
+}
+
+figure p {
+  text-align: left;
+  padding: 1rem;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  right: 65%;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.step {
+  margin: 0 auto 2rem auto;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+}
+
+.step:last-child {
+  margin-bottom: 0;
+}
+
+.step.is-active p {
+  background-color: #e68fac;
+  color: #3b3b3b;
+}
+
+.step p {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  background-color: #3b3b3b;
+	border-radius: 20px;
+}
+
+#step1 {
+	background-image: url(./data/suzie_zuzek/17.jpg);
+	background-size: 100% auto;
+}
+
+#step2 {
+	background-image: url(./data/suzie_zuzek/23.jpg);
+	background-size: 100% auto;
+}
+
+#step3 {
+	background-image: url(./data/suzie_zuzek/8.jpg);
+	background-size: 100% auto;
+}
+
+#step4 {
+	background-image: url(./data/suzie_zuzek/5.jpg);
+	background-size: 100% auto;
+}
