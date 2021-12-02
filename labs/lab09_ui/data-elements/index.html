@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lab 9 - UI</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <!-- Bootstrap Docs https://getbootstrap.com/docs/5.0/getting-started/introduction/
+    Customize theme colors https://getbootstrap.com/docs/5.0/customize/color/#theme-colors
+    and CSS variables https://getbootstrap.com/docs/5.0/customize/css-variables/-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- Basic responsive structure -->
+    <div class="container">
+      <!-- Columns start at 50% wide on mobile and bump up to 25% wide on desktop -->
+      <div class="row">
+        <div class="col-6 col-md-3">
+          <h1>Fisher's Iris Dataset</h1>
+          <h4>Which properties of a flower best distinguish it from other species?</h4>
+        </div>
+        <div class="col-6 col-md-3" id="left-menu">
+          <!-- Checkbox groups https://getbootstrap.com/docs/5.0/components/button-group/#checkbox-and-radio-button-groups -->
+        </div>
+        <div class="col-6 col-md-3" id="right-menu">
+          <!-- Radio button groups https://getbootstrap.com/docs/5.0/components/button-group/#checkbox-and-radio-button-groups -->
+        </div>
+        <div class="col-6 col-md-3" id="search">
+          <!-- Data lists https://getbootstrap.com/docs/5.0/forms/form-control/#datalists -->
+          <input class="form-control" list="datalist" id="searchDataList" placeholder="Search...">
+          <datalist id="datalist"></datalist>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-xl-9" id="interactive"></div>
+          <div class="col-xl-3" id="legend"></div>
+      </div>
+    </div>
+    <!-- Bootstrap Docs https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="app.js"></script>
+</html>

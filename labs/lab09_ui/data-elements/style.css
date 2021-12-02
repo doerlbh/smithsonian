@@ -1,0 +1,12 @@
+#interactive svg rect.highlight {
+  stroke-width: 1px;
+  stroke: white;
+}
+
+#interactive #tooltip.visible {
+  visibility: visible;
+}
+
+#interactive #tooltip:not(.visible) {
+  visibility: hidden;
+}

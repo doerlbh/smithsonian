@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+<link href="src/draggable.css" rel="stylesheet">
+<link href="src/styles.css" rel="stylesheet">
+<style>
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
+
+#shark{
+    border: 5px solid #555;
+
+}
+
+/* hidden info container */
+.hidden_info {
+  position: relative;
+  left: 10px;
+  top: 10px;
+  display: inline-block;
+}
+
+/* info text */
+.hidden_info .info_01 {
+  visibility: hidden;
+  width: 120px;
+  background-color: #fefefe;
+  opacity: 0.9;
+  color: #007ea7;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the info text */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the info text when you mouse over the hidden_info container */
+.hidden_info:hover .info_01 {
+  visibility: visible;
+}
+
+</style>
+</head>
+<body onload="startGame()">
+
+<script>
+var myGamePiece;
+
+function startGame() {
+    myGamePiece = new component(258, 248, "shark", 400, 250, false);
+    myGameMap = new component(1070, 736, "map", 0, 0, true);
+    myGameArea.start();
+}
+
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 1000;
+        this.canvas.height = 600;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.frameNo = 0;
+        this.interval = setInterval(updateGameArea, 20);
+        window.addEventListener('keydown', function (e) {
+            e.preventDefault();
+            myGameArea.keys = (myGameArea.keys || []);
+            myGameArea.keys[e.keyCode] = (e.type == "keydown");
+        })
+        window.addEventListener('keyup', function (e) {
+            myGameArea.keys[e.keyCode] = (e.type == "keydown");
+        })
+    },
+    stop : function() {
+        clearInterval(this.interval);
+    },    
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+}
+
+function component(width, height, img_name, x, y, isMap, type) {
+
+    this.type = type;
+    this.width = width;
+    this.height = height;
+    this.speed = 0;
+    this.angle = 0;
+    this.pseudo_angle = 0
+    this.moveAngle = 0;
+    this.initial_angle = 0;
+    this.initial_x = x;
+    this.initial_y = y;
+    this.x = x;
+    this.y = y;    
+    this.recover_step = 100
+    this.slow_change = 1/20
+    this.circle1_x = -100
+    this.circle1_y = -200
+    this.circle1_radius = 50
+    this.update = function() {
+        ctx = myGameArea.context;
+        ctx.save();
+        ctx.translate(this.x+this.width/2, this.y+this.height/2);
+        ctx.rotate(this.angle);
+        ctx.translate(-this.x, -this.y);
+        ctx.drawImage(document.getElementById(img_name), this.x-this.width/2, this.y-this.height/2, this.width, this.height);
+        ctx.strokeStyle = '#f00';  
+        ctx.lineWidth = 2;         
+        ctx.strokeRect(this.x-this.width/2, this.y-this.height/2, this.width, this.height);
+        if (isMap) {
+            ctx.fillStyle = "#c82124"; //red
+            ctx.beginPath();
+            ctx.arc(this.circle1_x,this.circle1_y,this.circle1_radius,0,Math.PI*2,true);
+            ctx.closePath();
+            ctx.fill();
+        }  
+        ctx.restore();  
+    }
+    this.newPos = function() {
+        this.angle += this.moveAngle * Math.PI / 180;
+        this.pseudo_angle += this.movePseudoAngle * Math.PI / 180;
+        this.x += this.speed * Math.sin(this.angle);
+        this.y -= this.speed * Math.cos(this.angle);
+        if (isMap) {
+            this.circle1_x += this.speed * Math.sin(this.angle);
+            this.circle1_y -= this.speed * Math.cos(this.angle);
+        }
+    }
+    this.recover = function(direction, reference, toChange) {
+        this.angle -= direction * (reference.angle - reference.initial_angle) / this.recover_step;
+        this.x -= direction * (reference.x - reference.initial_x) / this.recover_step;
+        this.y -= direction * (reference.y - reference.initial_y) / this.recover_step;
+        if (isMap) {
+        this.circle1_x -= direction * (reference.x - reference.initial_x) / this.recover_step;
+        this.circle1_y -= direction * (reference.y - reference.initial_y) / this.recover_step;
+        }
+        if (toChange) {
+          this.initial_angle += this.slow_change * (this.angle - this.initial_angle);
+          this.initial_x += this.slow_change * (this.x - this.initial_x);
+          this.initial_y += this.slow_change * (this.y - this.initial_y);
+        }
+    }
+    this.display = function(reference) {
+        console.log(this.circle1_x+this.width/2)
+        console.log(reference.x+35)
+        console.log("========")
+        if (this.circle1_x+this.width/2 > reference.x+20 && this.circle1_x+this.width/2 < reference.x+50) {
+            ctx = myGameArea.context;
+            ctx.save();
+            ctx.translate(this.x+this.width/2, this.y+this.height/2);
+            ctx.rotate(this.angle);
+            ctx.translate(-this.x, -this.y);
+            if (isMap) {
+                ctx.fillStyle = "#2876f9"; //blue
+                ctx.beginPath();
+                ctx.arc(this.circle1_x,this.circle1_y,this.circle1_radius,0,Math.PI*2,true);
+                ctx.closePath();
+                ctx.fill();
+                ctx.font = "30px Arial";
+                ctx.fillText("A shark’s sense of smell is 10,000 times better than a human’s.", 10, 50); 
+            }  
+            ctx.restore();  
+            }
+    }
+}
+
+function updateGameArea() {
+    myGameArea.clear();
+    myGameMap.moveAngle = 0;
+    myGameMap.speed = 0;
+    myGamePiece.moveAngle = 0;
+    myGamePiece.speed = 0;
+    if (myGameArea.keys && myGameArea.keys[37]) {myGameMap.movePseudoAngle = 1; myGamePiece.moveAngle = -1; }
+    if (myGameArea.keys && myGameArea.keys[39]) {myGameMap.movePseudoAngle = -1; myGamePiece.moveAngle = 1; }
+    if (myGameArea.keys && myGameArea.keys[38]) {myGameMap.speed= -1/2; myGamePiece.speed= 1; }
+    if (myGameArea.keys && myGameArea.keys[40]) {myGameMap.speed= 1/2; myGamePiece.speed= -1; }
+    myGameMap.newPos();
+    myGameMap.update();
+    myGameMap.recover(1/2,myGamePiece,false);
+    myGameMap.recover(1/4,myGameMap,true);
+    myGameMap.display(myGamePiece)
+
+    myGamePiece.newPos();
+    myGamePiece.update();
+    myGamePiece.recover(1,myGamePiece,false);
+}
+</script>
+
+<p>Please use the arrow keys to move the shark around.</p>
+<img id="shark" src="assets/sharks_temp.png"/ visibility: hidden>
+<img id="map" src="assets/treasure_map.jpg"/ visibility: hidden>
+
+<div class="hidden_info">🐟
+    <span class="info_01">A shark’s sense of smell is 10,000 times better than a human’s.</span>
+</div>
+
+</body>
+</html>

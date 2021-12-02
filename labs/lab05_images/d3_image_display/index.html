@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Major Studio 1 - Lab 5 - d3 Image Display</title>
+
+    <style type="text/css">
+      * {
+        margin:0;padding:0;
+        /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing#box_sizes_with_content-box_and_border-box*/
+        box-sizing: border-box;
+      }
+      body {
+        overflow: auto;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        background: #e0e0e0;
+        padding: 2rem;
+        color: #222;
+        letter-spacing: -0.5pt;
+      }
+      #app {
+        /*https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#lengths*/
+        margin-top: 2rem;
+        /*https://developer.mozilla.org/en-US/docs/Web/CSS/grid*/
+        display: grid;
+        /*https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids#flexible_grids_with_the_fr_unit*/
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 2rem;
+      }
+      
+      div.smithsonian-card {
+        max-width: 400px;
+        display: inline-block;
+
+        vertical-align:top;
+        white-space: normal;
+      }
+      div.smithsonian-card h2 {
+        font-size: 1.2rem;
+        line-height: 1.1;
+        padding-bottom: 0.5em;
+      }
+      div.smithsonian-card div.image {
+        margin-bottom: 1rem;
+        width: 200px;
+        height: 200px;
+        display:flex;
+        align-items: flex-end;
+      }
+      div.smithsonian-card div.image img {
+        max-width: 100%;
+        height: auto;
+        max-height: 200px;
+      }
+      .object-date { color: #999; }
+    </style>
+  </head>
+  <body>
+
+    <h1>An Image Collection</h1>
+    
+    <!-- where our images go -->
+    <div id="app"></div>
+
+  </body>
+  <script src="./libraries/d3.v7.min.js"></script>
+  <script src="app.js"></script>
+</html>

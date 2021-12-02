@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shark Game</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="src/draggable.css" rel="stylesheet">
+    <link href="src/styles.css" rel="stylesheet">
+    <audio controls> <source src="assets/christmas-cinematic-dream-piano-9784.mp3" type="audio/mp3" autoplay loop> </audio>
+  
+  </head>
+
+  <body>
+    <div id="target">
+      <img class="draggable caterpillar" src="assets/sharks_temp.png"/>
+      <img class="rotate_fish" src="assets/fish.png" />
+  
+      <h1 contenteditable class="draggable"></h1>
+    </div>
+    <div class="hidden_info"> 🐟
+      <span class="info_01">A shark’s sense of smell is 10,000 times better than a human’s.</span>
+    </div>
+
+    <script type="module" src="src/full_draggable.js"></script>
+    <!-- <script type="module" src="src/draggable.js"></script> -->
+    <!-- <script type="module" src="src/index.js"></script> -->
+  </body>
+</html>
