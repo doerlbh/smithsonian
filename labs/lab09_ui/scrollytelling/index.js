@@ -67,16 +67,14 @@ function draw() {
   const section = d3
     .selectAll(".section")
     .classed("current", (d, i) => i === currentIndex);
-
+  
   const alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  
   const sectionText = section
     .filter((_, i) => i === currentIndex)
     .text()
     .toUpperCase();
-    console.log(section.text())
-    console.log(sectionText)
-
-  const data = alpha.map(letter => ({
+    const data = alpha.map(letter => ({
     letter,
     value: [...sectionText.matchAll(letter)].length,
   }));
