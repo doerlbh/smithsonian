@@ -1,13 +1,19 @@
 /*light blue #B3D4FC;*/
 
+@font-face { 
+  font-family: Kanit; 
+  src: url('fonts/Kanit/Kanit-ExtraLight.ttf'); 
+} 
+
+
 body {
 margin: 0px;
 padding: 0px;
-font-family: sans-serif;
+font-family: Kanit;
 font-size: 16px;
 }
 
-#controls {
+/* #controls {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -16,18 +22,18 @@ font-size: 16px;
 .active {
 background-color: #5885AF;
 opacity: 0.8;
-}
+} */
 
 #defaultCanvas {
 margin: 0px;
 padding: 0px;
 }
 
-#myP5 {
+/* #myP5 { */
 /*left:30%;
 height:80%;
 position:fixed;*/
-}
+/* } */
 
 #container {
   width: 800px;
@@ -40,7 +46,6 @@ position:fixed;*/
   margin-bottom: 5px;
   margin-left: 5px;
   border: 0;
-  
 }
 
 .btn {
@@ -101,8 +106,8 @@ position:fixed;*/
 /* hidden info container */
 .hidden_info {
 position: fixed;
-left: 100px;
-top: 100px;
+left: 0px;
+top: 20px;
 padding:0.3em 1.2em;
 margin:0 3em 3em 0;
 font-size: 24px;
@@ -112,33 +117,71 @@ text-decoration:none;
 font-family:'Roboto',sans-serif;
 font-weight:400;
 color:#040404;
-background-color:#FFFFE0;
-opacity: 0.6;
-box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+/* background-color:#FFFFE0; */
+opacity: 0.8;
+/* box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17); */
 text-align:center; 
 }
 
+
 /* info text */
-/* .hidden_info .info_01 {
+.hidden_info .info {
 visibility: hidden;
-width: 120px;
+/* width: 120px; */
 background-color: #fefefe;
 opacity: 0.9;
 color: #007ea7;
 text-align: center;
 padding: 5px 0;
-border-radius: 6px; */
+border-radius: 6px;
 
 /* Position the info text */
-/* position: fixed;
+position: fixed;
 z-index: 1;
-} */
+}
 
 /* Show the info text when you mouse over the hidden_info container */
-/* .hidden_info:hover .info {
+.hidden_info:hover .info {
 visibility: visible;
+}
+
+/* #button1:hover .img1 {
+  visibility: visible;
+}
+
+#button2:hover .img2 {
+  visibility: visible;
+}
+
+#button3:hover .img3 {
+  visibility: visible;
+}
+
+#button1:hover {
+  visibility: visible;
 } */
 
+.hide {
+  display: none;
+}
 
+/* .myDIV:hover + .hide {
+  display: block;
+  color: white;
+}
 
-  
+.myDIV{
+  left: 20px; 
+  top: 10px;
+} */
+
+.info_01, .info_02, .info_03{
+  visibility: hidden;
+  z-index: 1;
+  left: 0px;
+  top: 20px;
+}
+
+#button1, #button2, #button3:hover .info_01{
+  visibility: visible;
+}

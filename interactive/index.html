@@ -1,48 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Shark Game</title>
-    <script src="lib/jquery.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js" type="text/javascript"></script>
-    <script src="lib/p5.play.js" type="text/javascript"></script>
-    <script src="player.js"></script>
-    <link rel="stylesheet" href="js/bootstrap/bootstrap.min.css">
-    <script src="js/bootstrap/bootstrap.min.js"></script>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+@font-face { 
+    font-family: Kanit; 
+    src: url('fonts/Kanit/Kanit-ExtraLight.ttf'); 
+  } 
+  
+  p {
+  margin: 0px;
+  padding: 0px;
+  font-family: Kanit;
+  font-size: 25px;
+  }
 
-    <style>
+@font-face { 
+    font-family: Candyshop; 
+    src: url('fonts/candyshop/Candyshop.ttf'); 
+  }   
 
-    </style>
+.bgimg {
+  background-color: #005EB8;
+  height: 100%;
+  position: relative;
+  font-family: "Candyshop";
+  font-size: 25px;
+  color: white;
+}
 
-  </head>
-  <body>
-    
-    <!-- loading page -->
-    <!-- <div class="wrap">
-      <div class="loading">
-        <div class="bounceball"></div>
-        <div class="text">NOW LOADING</div>
-      </div>
-    </div> -->
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
 
-    <div id="controls">
-      <button id="shark1">shark1</button>
-      <button id="shark2">shark2</button>
-      <button id="shark3">shark3</button>
-    </div>
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
 
-    <div id = "container">
-    <div id="myP5">
-    <script src="app.js"></script>
-    </div>
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 
-    <div class="hidden_info">
-      <span id="info_01" class="info" visibility: hidden> A shark’s sense of smell is 10,000 times better than a human’s.</span>
-      <span id="info_02" class="info" visibility: hidden> It’s hard to see in the murky waters of the deep, but sharks have excellent vision. Their night vision is better than a cat’s or a wolf’s.</span>  
-    
-    </div>
+hr {
+  margin: auto;
+  width: 40%;
+}
+</style>
+<body>
 
-  </body>
+<div class="bgimg">
+  <div class="topleft">
+    <p>An educational and healing journey towards the mystery behind the mysterious life of the sharks</p>
+  </div>
+  <div class="middle">
+    <h1>SHARKS!</h1>
+    <hr>
+    <p>Please use mouse to control the movements of your shark characters.</p>
+    <p>Click <a style="color:white;" href="./character.html"><b>Here</b></a>  to select your character.</p>
+  </div>
+  <div class="bottomleft">
+    <p>Created by Baihan Lin</p>
+  </div>
+</div>
+
+</body>
 </html>
