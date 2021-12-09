@@ -42,7 +42,7 @@
 
         // update graphic based on step
         figure.select("p").text(infos[response.index]);
-        if (response.index % 2 === 0) {
+        if (response.index % 2 === 1) {
           console.log('even left')
           figure.select("p").style("left", 5+"\%");
           figure.select("p").style("right", 65+"\%");

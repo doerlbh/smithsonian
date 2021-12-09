@@ -12,11 +12,11 @@ body, html {
   } 
   
   p {
-  margin: 0px;
-  padding: 0px;
-  font-family: Kanit;
-  font-size: 24px;
-  }
+    margin: 0px;
+    padding: 0px;
+    font-family: Kanit;
+    font-size: 25px;
+    }
 
 @font-face { 
     font-family: Candyshop; 
@@ -32,34 +32,9 @@ body, html {
   color: white;
 }
 
-.topleft {
-  position: absolute;
-  top: 0;
-  left: 16px;
-}
-
-.bottomleft {
-  position: absolute;
-  bottom: 0;
-  left: 16px;
-}
-
-.middle {
-  position: absolute;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-  text-align: center;
-}
-
-hr {
-  margin: auto;
-  width: 40%;
-}
 
 .container {
   position: relative;
-  width: 50%;
   text-align: center;
 }
 
@@ -83,75 +58,68 @@ hr {
   transition: .5s ease;
   background-color: white;
   text-align: center;
-  border-radius: 10px 10px 10px 10px
+  border-radius: 10px 10px 10px 10px;
 }
 
 .container:hover .overlay {
   opacity: 1;
 }
 
-.text {
+h2 {
+  color: #005EB8;
+  font-family: Kanit;  
+}
+
+p {
   color: #005EB8;
   font-family: Kanit;
-  font-size: 12px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
 }
 
 .middle {
   display: grid;
-  width: 100%;
+  width: 90%;
   height: 100%;
   align-content: space-evenly;
-  grid-template-columns: auto auto auto;
-  grid-gap: 5px;
+  grid-template-columns: auto auto auto auto;
   /* background-color: #2196F3; */
-  padding: 5%;
   text-align: center;
+  padding-left: 5%;
 }
 
-.middle > div {
-  background-color: rgba(255, 255, 255, 0.3);
-  text-align: center;
-  padding: 5px 0;
-}
 </style>
 <body>
+
 
 <div class="bgimg">
   <div class="middle">
 
   <span class="container">
     <img src="assets_backup/shark1_stretching0001.png" alt="shark1" class="image">
-    <div class="overlay">
-      <div class="text"><a href="./game.html"><b>Bob<br>the Blue shark</b></a> <br><br> It has countershading protects from above and below. The shortfin mako shark is able to elevate its body temperature almost 20°F above the surrounding water. </div>
-    </div>
+    <button class="overlay" onclick="location.href='./game.html?sharktype=shark1'">
+      <p><b><span style="font-family:Candyshop">Bob</span><br>the Blue shark</b></p>
+      <p><br> It has countershading protects from above and below. The shortfin mako shark is able to elevate its body temperature almost 20°F above the surrounding water. </p>
+    </button>
   </span>
  
     <span class="container">
-      <img src="assets_backup/shark2_stretching0001.png" alt="shark1" class="image">
-      <div class="overlay">
-        <div class="text"><a href="./game.html"><b>Jack<br>the Hammerhead shark</b></a> <br><br> Why they school is still mystery. Their unique eye position allows for 360 degree vision. </div>
-      </div>
+      <img src="assets_backup/shark2_stretching0001.png" alt="shark2" class="image">
+      <button class="overlay" onclick="location.href='./game.html?sharktype=shark2'">
+        <p><b><span style="font-family:Candyshop">Jack</span><br>the Hammerhead shark</b></p>
+        <p><br> Why they school is still mystery. Their unique eye position allows for 360 degree vision. </p>
+      </button>
     </span>
 
       <span class="container">
-        <img src="assets_backup/shark3_stretching0001.png" alt="shark1" class="image">
-        <div class="overlay">
-          <div class="text"><a href="./game.html"><b>Lucy<br>the Epaulette Shark</b></a> <br><br> Their protective coloration means safety. Their fins work as feet. </div>
+        <img src="assets_backup/shark3_stretching0001.png" alt="shark3" class="image">
+        <button class="overlay" onclick="location.href='./game.html?sharktype=shark3'">
+          <p><b><span style="font-family:Candyshop">Lucy</span><br>the Epaulette shark</b></p>
+          <p><br> Their protective coloration means safety. Their fins work as feet. </p>
+          </button>
         </span>
+
 
   </div>
 </div>
-
-<!-- var shark1_info = "Shortfin mako shark. It has countershading protects from above and below. The shortfin mako shark is able to elevate its body temperature almost 20°F above the surrounding water.";
-var shark2_info = "Hammerhead shark. Why they school is still mystery. Their unique eye position allows for 360 degree vision.";
-var shark3_info = "Epaulette Shark. Their protective coloration means safety. Their fins work as feet."; -->
 
 
 </body>

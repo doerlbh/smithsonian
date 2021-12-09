@@ -1,6 +1,12 @@
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+var sharktype = urlParams.get("sharktype");
+if (sharktype == null) {
+  sharktype = "shark1";
+}
+
 var shark;
 var wreck;
-var sharktype = "shark1";
 var infos = ["A shark’s sense of smell is 10,000 times better than a human’s.", 
 "The myth that sharks need to swim to breathe is false. Some breathe easily while motionless or resting.",
 "Bony fishes are like blimps.They use their swim bladder to rise and sink in the water. Sharks are like airplanes. They use pectoral fins like wings to gain lift in the water.", 
@@ -30,6 +36,9 @@ var shark3_info = "Epaulette Shark. Their protective coloration means safety. Th
 var SCENE_W = 3000;
 var SCENE_H = 3000;
 
+var knowledgeboxL;
+var knowledgeboxW; 
+
 var img1, im2, img3;
 
 var isKeyboard = false;
@@ -46,36 +55,54 @@ function setup() {
   var myCanvas = createCanvas(windowWidth, windowHeight);
   // fullscreen(myCanvas);
 
-  button1 = createButton('Bob')
-  .mousePressed(()  => {
-    sharktype = 'shark1';
-    console.log('debug button: ', sharktype);
-    setup_sharktype(sharktype);
-  });
+//   button1 = createButton('Bob')
+//   .mousePressed(()  => {
+//     sharktype = 'shark1';
+//     console.log('debug button: ', sharktype);
+//     setup_sharktype(sharktype);
+//   });
   
-  button2 = createButton('Jack')
-  .mousePressed(()  => {sharktype = 'shark2'
-  console.log('debug button: ', sharktype);
+//   button2 = createButton('Jack')
+//   .mousePressed(()  => {sharktype = 'shark2'
+//   console.log('debug button: ', sharktype);
+//   setup_sharktype(sharktype);
+// });
+
+//   button3 = createButton('Lucy')
+//   .mousePressed(()  => {sharktype = 'shark3'
+//   console.log('debug button: ', sharktype);
+//   setup_sharktype(sharktype);
+// });
+
+  // button1.position(0.2*windowWidth, 10);
+  // button2.position(0.4*windowWidth, 10);
+  // button3.position(0.6**windowWidth, 10);
+
+
+  // button1.style('background-image', 'assets/shark1_stretching0001.png');
+  // button2.style('background-image', 'assets/shark1_stretching0001.png');
+  // button3.style('background-image', 'assets/shark1_stretching0001.png');
+
+  // button1.id('button1');
+  // button2.id('button2');
+  // button3.id('button3');
+
+  // document.getElementById("button1").innerHTML = '<img src="assets/shark1_stretching0001.png" />';
+  // document.getElementById("button2").innerHTML = '<img src="assets/shark2_stretching0001.png" />';
+  // document.getElementById("button3").innerHTML = '<img src="assets/shark3_stretching0001.png" />';
+
+  // document.getElementById("button1").style.width = '50px';
+  // document.getElementById("button1").style.height = 'auto';
+  // document.getElementById("button2").style.width = '50px';
+  // document.getElementById("button2").style.height = 'auto';
+  // document.getElementById("button3").style.width = '50px';
+  // document.getElementById("button3").style.height = 'auto';
+
   setup_sharktype(sharktype);
-});
+  knowledgeboxL= height * 0.5;
+  knowledgeboxW = width * 0.8; 
 
-  button3 = createButton('Lucy')
-  .mousePressed(()  => {sharktype = 'shark3'
-  console.log('debug button: ', sharktype);
-  setup_sharktype(sharktype);
-});
-
-  button1.id('button1');
-  button2.id('button2');
-  button3.id('button3');
-
-  button1.position(10,20);
-  button2.position(10,50);
-  button3.position(10,80);
-
-  setup_sharktype(sharktype);
-
-  time = millis();
+  // time = millis();
   // button1.mouseOver(showImg(img1, 0, 0));
   // button2.mouseOver(showImg(img2, 0, 0));
   // button3.mouseOver(showImg(img3, 0, 0));
@@ -297,9 +324,7 @@ function collect(collector, collected)
   for(var i=0; i<infos.length; i++) {
     // console.log("in here");
     if (Math.abs(infospots[i].position.x-collector.position.x)<50 && Math.abs(infospots[i].position.y-collector.position.y)<50) {
-      var knowledgeboxL= 300;
-      var knowledgeboxW = 400;
-      
+
       // draw rec panel
       fill('rgba(251, 250, 218)');
       noStroke();
@@ -309,7 +334,7 @@ function collect(collector, collected)
       // draw text
       textSize(20);
       textFont(fontKanit);
-      text(infos[i], infospots[i].position.x+50, infospots[i].position.y-40, knowledgeboxW, knowledgeboxL);
+      text(infos[i], infospots[i].position.x-knowledgeboxW/2, infospots[i].position.y+100, knowledgeboxW, knowledgeboxL);
 
     }
   }
@@ -334,27 +359,23 @@ function destroy(collector, collected)
 
 function envinfo_display(collector, collected) {
   if (Math.abs(collected.position.x-collector.position.x)<50 && Math.abs(collected.position.y-collector.position.y)<50) {
-    var knowledgeboxL= 300;
-    var knowledgeboxW = 400;
     fill('rgba(251, 250, 218)');
     noStroke();
     textSize(20);
     textFont(fontKanit);
     // if( millis() < time + 5000){
-      text(envinfo, collected.position.x+50, collected.position.y-40, knowledgeboxW, knowledgeboxL);
+      text(envinfo, collected.position.x-knowledgeboxW/2, collected.position.y+100, knowledgeboxW, knowledgeboxL);
     // }
   }
 }
 
 function wreckinfo_display(collector, collected) {
   if (Math.abs(collected.position.x-collector.position.x)<50 && Math.abs(collected.position.y-collector.position.y)<50) {
-    var knowledgeboxL= 300;
-    var knowledgeboxW = 400;
     fill('rgba(251, 250, 218)');
     noStroke();
     textSize(20);
     textFont(fontKanit);
-    text(wreckinfo, collected.position.x+50, collected.position.y-40, knowledgeboxW, knowledgeboxL);
+    text(wreckinfo, collected.position.x-knowledgeboxW/2, collected.position.y+100, knowledgeboxW, knowledgeboxL);
   }
 }
 
