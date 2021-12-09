@@ -26,6 +26,10 @@ a {
   font-weight: 400;
 }
 
+h1, h2 {
+  font-family: 'Merienda One';
+}
+
 a,
 a:visited,
 a:hover {
